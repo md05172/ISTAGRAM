@@ -1,0 +1,77 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+   font-family:"MaplestoryOTFBold"
+}
+.hashtag{
+   text-align:left;
+   width: 300px;
+   border-radius : 10px;
+    height: 50px;
+}
+
+.content{
+   width: 300px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+.top_profile{
+   float:right;
+}
+
+.insertForm{
+   text-align: center;
+   
+}
+
+.hashtag{
+   margin-bottom: 10px;
+}
+
+.content{
+   margin-bottom: 30px;
+}
+
+#addBtn_box{
+   margin-bottom: 30px;
+}
+
+
+#modal {
+  position:relative;
+  width:100%;
+  height:100%;
+  z-index:1;
+}
+
+
+#modal button {
+  display:inline-block;
+  width:100px;
+  margin-left:calc(100% - 275px - 10px);
+}
+
+#modal_content {
+  border-radius:20px;
+  width:300px;
+  margin: 110px auto 100px 700px;
+  padding:30px 40px;
+  background:#fff;
+  border:2px solid #666;
+}
+
+#modal .modal_layer {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0, 0, 0, 0.5);
+  z-index:-1;
+}   

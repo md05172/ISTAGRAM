@@ -1,0 +1,66 @@
+
+@font-face {
+   src : url ('href="https://hangeul.pstatic.net/hangeul') format('woff');
+    font-family: 'NanumGothic';
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+   font-family:"NanumGothic"
+}
+.search-btn {
+   position: relative;
+}
+
+.search-box {
+   position: fixed;
+   top: 0;
+   left:-200%; /* initially hidden on the left */
+   bottom: 0;
+   width: 400px;
+   background-color : rgb(255,255,255,0.5);
+   transition: all 0.5s ease;
+   padding: 20px;
+   box-sizing: border-box;
+   box-shadow: 0px 0px 5px #333;
+      z-index: -1; /* higher than sidebar */
+}
+
+.search-box form {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 100%;
+}
+
+.search-box button[type="submit"] {
+   margin-top: -185%;
+   width: 25%;
+   background-color: #3897f0;
+   border: none;
+   color: #fff;
+   font-size: 16px;
+   cursor: pointer;
+   width: 25%;
+}
+
+.search_input {
+    background-color: #54545466;
+    border: none;
+    border-radius: 8px;
+    color: #333333;
+     font-size: var(--system-16-font-size);
+    height: 64px;
+      outline: none;
+    padding: 3px 16px;
+    width: 100%;
+    text-align: center;
+}
+/* Show search box on click */
+.search-btn:focus+.search-box, .search-box:focus-within {
+   left: 240px; /* move to the right */
+}
+.search-btn:focus+.search-box:focus-within,
+.search-box:focus-within+.search-btn:focus {
+    right: -200%; /* move to the left */
+}

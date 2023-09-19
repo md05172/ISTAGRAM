@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.iclass.mvc.dao.ImemberMapper">
+
+	<!-- 성윤 회원가입 -->
+	<insert id="insert" parameterType="Imember">
+		INSERT INTO imember (mno, email, nickname, pw)
+		VALUES (mno_seq.nextval, #{email},#{nickname},#{pw})
+	</insert>
+
+	<!-- 성윤 로그인 -->
+	<select id="login" parameterType="java.util.Map"
+		resultType="Imember">
+		SELECT * FROM imember
+		WHERE email=#{email} and pw=#{pw}
+	</select>
+
+	<!-- 성윤아이디중복체크 -->
+	<select id="idCheck" parameterType="String" resultType="int">
+		select count(*) from imember
+		where email=#{email}
+	</select>
+
+	<!-- 검색 -->
+	<select id="find" parameterType="String" resultType="Imember">
+		select * from imember where nickname like '%' || #{find} || '%' or info like
+		'%' || #{find} || '%'
+	</select>
+
+	<!-- 완기형 회원수정 -->
+	<update id="update" parameterType="Imember">
+		UPDATE imember
+		SET email=#{email}, Nickname=#{nickname} ,info=#{info},
+		pw=#{pw}
+		WHERE email=#{email}
+	</update>
+
+	<!-- 완기형 이메일로 회원조회 -->
+	<select id="selectOne" parameterType="String"
+		resultType="Imember">
+		SELECT * FROM imember WHERE email=#{email}   <!-- PK로 조회 -->
+	</select>
+
+	<!-- 닉네임으로 회원 조회 -->
+	<select id="selectBynickName" parameterType="string"
+		resultType="Imember">
+		SELECT * FROM imember WHERE nickname = #{nickname}
+	</select>
+
+	<!-- 이미지 바꾸기 -->
+	<update id="changeImg" parameterType="ChangeImg">
+		UPDATE imember SET mphotofiles = #{src}
+		WHERE nickname = #{user}
+	</update>
+
+	<select id="nickCheck" parameterType="string" resultType="int">
+		select count(nickname) from imember where nickname like '%' || #{nick} || '%'
+	</select>
+	
+	<update id="updatepw" parameterType="Imember">
+       UPDATE imember
+       set pw = #{pw} where email=#{email}
+    </update>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.iclass.mvc.dao.LikesMapper">
+	
+	<insert id="insert" parameterType="Likes">
+		INSERT INTO LIKES(LIKENO, NICKNAME, PNO)
+		VALUES(likeno_seq.nextval, #{nickname}, #{pno})
+		
+	</insert>
+	
+	<select id="selectCount" parameterType="java.util.Map" resultType="int">
+		SELECT count(pno) FROM likes WHERE pno = #{pno} AND nickname = #{nickname}
+	</select>
+	
+	<delete id="delete" parameterType="java.util.Map">
+		DELETE likes WHERE pno = #{pno} AND nickname = #{nickname} 
+	</delete>
+	
+	<select id="selectLike" resultType="Likes" parameterType="String">
+		select * from likes where nickname = #{nickname}
+	</select>
+</mapper>

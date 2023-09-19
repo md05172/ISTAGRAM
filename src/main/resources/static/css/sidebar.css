@@ -1,0 +1,121 @@
+@charset "UTF-8";
+@font-face {
+   src : url ('href="https://hangeul.pstatic.net/hangeul') format('woff');
+    font-family: 'NanumGothic';
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+   font-family:"NanumGothic"
+}
+.sidebar {
+    filter: invert(100%);
+   position: fixed;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   width: 200px;
+   background-color: white;
+   padding: 20px;
+   box-shadow: 0px 0px 5px #333;
+   
+   z-index: 0;
+}
+
+.sidebar-links {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+.sidebar-links li {
+   margin: 10px 0;
+
+}
+
+.sidebar-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  transition: color 0.3s ease-in-out;
+}
+
+.sidebar-links li :hover {
+   color:#4286f4;
+}
+
+.sidebar-links li img {
+   margin-right: -30px;
+   
+}
+.image-caption:hover{
+   color:#4286f4;
+   
+}
+
+.sidebar-links li img:hover {
+   opacity: 0.5;
+   background-color: #fafafa;
+
+}
+
+.sidebar-links {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 20px;
+}
+
+.sidebar-links li {
+   margin-bottom: 20px;
+}
+
+.sidebar-links li:first-child {
+   margin-bottom: 40px;
+}
+
+
+.sidebar-links button {
+   background-color: #0095f6;
+   border: none;
+   border-radius: 5px;
+   color: #FFFFFF;
+   font-size: 14px;
+   height: 28px;
+   margin-left: 10px;
+   padding: 5px 10px;
+   width: 70px;
+}
+
+.sidebar-links {
+   display: flex;
+   justify-content: center;
+   padding: 10px;
+}
+
+.sidebar-links li {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-bottom: 20px;
+}
+
+.sidebar-links li:first-child {
+   margin-bottom: 20px;
+}
+
+.sidebar-links input[type="text"] {
+   width: 67%;
+}
+
+.sidebar-links button {
+   margin-left: 0;
+   width: 100%;
+}
+
+* {
+	box-sizing: inherit;
+}

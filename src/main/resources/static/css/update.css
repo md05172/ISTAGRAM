@@ -1,0 +1,71 @@
+@charset "UTF-8";
+
+body {
+   background-color:black;
+   height: 100%;
+}
+
+#email, #nickname, #pw, #pw1, #pw2, #info {
+   font-size: 14px;
+   width: 330px;
+   height: 40px;
+   background-color: rgb(192, 192, 192);
+   border: 1px solid #5994EE;
+   border-radius: 5px;
+   padding-left: 10px;
+   text-align: center;
+   margin-left: 300px;
+}
+
+#update,#pwch {
+   font-size: 15px;
+   font-weight: bold;
+   background-color:#5994EE;
+   color: white;
+    width: 40%; 
+   border-radius: 5px;
+   padding: 9px;
+   cursor: pointer;
+   margin-left: 356px;
+}
+#getOne {
+   margin-top:20px;
+   font-size: 15px;
+   font-weight: bold;
+   background-color:#5994EE;
+   color: white;
+   width: 40%;
+   border-color: black;
+   border-radius: 5px;
+   padding: 9px;
+   cursor: pointer;
+   margin-left: 184px;
+}
+#an{
+   margin-left: 350px;
+   color:white;
+   font-weight: bold;
+   text-align: center;
+}
+
+.qwe {
+   margin-left: 635px;
+   width: 600px;
+   min-width: 600px;
+   margin-top: 165px
+}
+
+input {
+   display: block;
+   color:black;
+}
+
+.asd{
+   margin-left: 635px;
+   width: 600px;
+   min-width: 600px;
+}
+
+.asdf{
+   background-color: black;
+}

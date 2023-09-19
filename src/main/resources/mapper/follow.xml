@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.iclass.mvc.dao.FollowMapper">
+	
+	<insert id="followInsert" parameterType="Follow">
+		INSERT INTO FOLLOW (wsender, wreceiver, msg)
+		VALUES (#{wsender}, #{wreceiver}, #{msg})
+	</insert>
+	
+	<select id="followselect" parameterType="string" resultType="Follow">
+		SELECT 
+			wsender, wreceiver, msg
+		FROM 
+			FOLLOW
+		WHERE 
+			wsender = #{receiver}
+	</select>
+	
+	<select id="followerselect" parameterType="string" resultType="Follow">
+		SELECT 
+			sender wsender, receiver wreceiver, msg
+		FROM 
+			FOLLOWER
+		WHERE 
+			receiver = #{receiver}
+	</select>
+	
+	<select id="followselectcheck" parameterType="string" resultType="Follow">
+		SELECT 
+			wsender, wreceiver, msg
+		FROM 
+			FOLLOW
+		WHERE 
+			wreceiver = #{wreceiver}
+		AND
+			wcheck = 'n'
+	</select>
+	
+	<select id="followerselectcheck" parameterType="string" resultType="Follow">
+		SELECT 
+			sender wsebder, receiver wreceiver, msg
+		FROM 
+			FOLLOWER
+		WHERE 
+			receiver = #{nickname}
+		AND
+			fcheck = 'n'
+	</select>
+	
+	<update id="followerupdate">
+		UPDATE follower SET fcheck = 'y' WHERE receiver = #{nickname}
+	</update>
+	
+	<select id="followfind" parameterType="java.util.Map" resultType="Follow">
+		SELECT * FROM FOLLOW
+		WHERE wsender = #{wsender} 
+		AND wreceiver = #{wreceiver}
+	</select>
+	
+	<select id="followcount" parameterType="string" resultType="int">
+		SELECT COUNT(wsender) FROM FOLLOW
+		WHERE wsender = #{sender}	
+	</select>
+	
+	<select id="followercount" parameterType="string" resultType="int">
+		SELECT COUNT(sender) FROM FOLLOWER
+		WHERE receiver = #{receiver}	
+	</select>
+	
+	<insert id="followerInsert" parameterType="Follow">
+		INSERT INTO FOLLOWER (sender, receiver, msg) 
+		VALUES (#{wsender}, #{wreceiver}, #{msg})
+	</insert>
+	
+	<delete id="followdelete" parameterType="Follow">
+		DELETE FOLLOW 
+		WHERE wsender = #{wsender}
+		AND wreceiver = #{wreceiver}
+	</delete>
+	
+	<delete id="followerdelete" parameterType="Follow">
+		DELETE FOLLOWER 
+		WHERE sender = #{wsender}
+		AND receiver = #{wreceiver}
+	</delete>
+	
+</mapper>

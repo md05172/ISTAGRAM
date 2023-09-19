@@ -1,0 +1,156 @@
+@charset "UTF-8";
+
+@font-face {
+   src : url ('href="https://hangeul.pstatic.net/hangeul') format('woff');
+    font-family: 'NanumGothic';
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+   font-family:"NanumGothic"
+}
+#top {
+    margin-left: 30%;
+    color: white;
+     width: 1000px;
+    height: 245px;
+    position: relative;
+}
+
+#nickname2 {
+    width: 84px;
+    height: auto;
+    padding-left: -23px;
+    font-size: 30px;
+    text-align: center;
+    position: fixed;
+    margin-top: -20px;
+    margin-left: 90px;
+    position: absolute;
+}
+
+#image {
+    width: 16%;
+    height: 65%;
+    display: inline-block;
+    margin: 40px 0 0 94px;
+}
+
+#imagein {
+   width: 90%;
+   height: 90%;
+   border-radius: 50%;
+}
+
+#option {
+    float: right;
+    width: 68%;
+    height: 100%;
+}
+
+#first {
+   
+    height: 26px;
+    margin-top: 10%;
+}
+
+#first div{
+   display: inline-block;
+    transform: translate(-35px, -4px);
+}
+
+#flow {
+    height: 66%;
+    position: relative;
+}
+
+#flowul1 {
+   list-style: none;
+    overflow: hidden;
+    height: 20%;
+    margin-bottom: -38px;
+    margin-top: 16px;
+}
+
+#flowul1 li {
+   float: left;
+   font-size:20px;
+   padding: 0 107px 0px 49px;
+}
+
+#flowul2 {
+   list-style: none;
+   overflow: hidden;
+   height: 95px;
+}
+
+#flowul2 li {
+    float: left;
+    margin-top: 28px;
+    font-size: 30px;
+    padding: 0px 78px 0px 18px;
+
+}
+
+.photo_file{
+    width:300px; 
+    height: 200px;
+    border-radius: 10%;
+}
+
+.photo_box {
+    margin-left: 475px;
+    color: white;
+    width:  1000px;
+    height: 573px;
+    border-top: 1px solid gray;
+    padding-top: 20px;
+}
+
+.photo_box img{
+   width: 150px;
+   height: 150px;
+}
+
+.photo_gallery {
+   list-style: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.photo_gallery li {
+   float: left;
+    padding: 0 7px 0 9px;
+}
+
+#showinfo {
+   position: absolute;
+   bottom: 40px;
+   left: 55px;
+}
+
+#infobutton{
+   color:black;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: block;
+    width: 144px;
+    height: 41x;
+    padding-left: -23px;
+    font-size: 25px;
+    text-align: center;
+    position: fixed;
+    margin-top: -39px;
+    margin-left: 323px;
+}
+
+#buttonn {
+	background-color: white;
+    color: black;
+    border: none;
+}
+
+.followdeletebutton {
+	float: right;
+}

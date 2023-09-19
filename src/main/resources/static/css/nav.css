@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@font-face {
+   src : url ('href="https://hangeul.pstatic.net/hangeul') format('woff');
+    font-family: 'NanumGothic';
+    font-weight: normal;
+    font-style: normal;
+}
+*{
+   font-family:"NanumGothic"
+}
+nav {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #dbdbdb;
+  
+}
+
+.mainSearch {
+	float: left;
+	margin-left: 250px;
+}
+
+.mainSearch > input {
+	width: 300px;
+}
+
+div .mainSearch{
+   float: left;
+}
+div .mainSearch{
+   float: right;
+   position: inherit;
+}
+div .mainSearch a{
+   float: right;
+   position: inherit;
+}
+
+span a{
+   color:black;
+   text-decoration: none;
+}
+span a:hover{
+   cursor: pointer;
+   color: blue;
+   
+}
+
+ .find{
+    size:40px;
+    height: 20px;
+}
+
+ .label_search{
+   position: absolute;
+   width: 300px;
+}
+
+ .searchfind{
+ 	float:left;
+ 	font-size:12px;
+   position: absolute;
+   width: 300px;
+}

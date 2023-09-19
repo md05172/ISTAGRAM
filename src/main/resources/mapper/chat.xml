@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.iclass.mvc.dao.ChatMapper">
+	
+	<!-- 채팅 저장 -->
+	<insert id="msgInsert" parameterType="ChatMessage">
+		<selectKey keyProperty="pk"  resultType="int" order="AFTER">
+			SELECT msg_seq.currval FROM DUAL
+		</selectKey>
+		INSERT INTO message (MSGNO, MSGSENDNICK, MSGRECEIVERNICK, MSGCONTENT)  
+		VALUES (msg_seq.nextval, #{msgsendnick}, #{msgreceivernick}, #{msgContent})
+	</insert>
+	
+	<!-- 본인이 보낸 채팅 삭제 -->
+	<delete id="msgDelete" parameterType="java.util.Map">
+		DELETE FROM message 
+		WHERE roomno = #{roomno} 
+		AND msgno = #{msgno}
+		AND msgSendNick = #{msgsendnick} 
+	</delete>
+	
+	<!-- 메시지를 보내면 채팅방update -->
+	<update id="msgRoomUpdate" parameterType="java.util.Map">
+		UPDATE message SET roomno = #{roomno}
+		WHERE msgsendnick = #{msgsendnick}
+		AND msgreceivernick = #{msgreceivernick}
+	</update>
+	
+	<!-- 채팅 가져오기 -->
+	<select id="allMsg" parameterType="java.util.Map" resultType="ChatMessage">
+		SELECT 
+			MSGNO pk, MSGSENDNICK, MSGRECEIVERNICK, MSGCONTENT, MSGCREATEDAT, MSGCHECK, ROOMNO
+		FROM 
+			MESSAGE
+		WHERE 
+			msgsendnick = #{user1} AND msgreceivernick = #{user2}
+		OR
+			msgsendnick = #{user2} AND msgreceivernick = #{user1}
+		ORDER BY MSGCREATEDAT ASC
+	</select>
+	
+	<!-- 채팅 안읽은 개수 -->
+	<select id="msgcount" parameterType="string" resultType="int">
+		SELECT 
+			COUNT(MSGNO)
+		FROM 
+			MESSAGE
+		WHERE 
+			MSGRECEIVERNICK = #{receivernick}
+		AND 
+			MSGCHECK = 'n'
+	</select>
+	
+	<!-- 채팅읽음처리 -->
+	<update id="updateMsg" parameterType="string">
+		UPDATE MESSAGE SET MSGCHECK = 'y' 
+		WHERE MSGRECEIVERNICK = #{msgreceivernick} 
+	</update>
+	
+</mapper>

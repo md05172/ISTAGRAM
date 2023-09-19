@@ -1,0 +1,82 @@
+@font-face {
+   font-family: 'MaplestoryOTFBold';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+* {
+   font-family: "MaplestoryOTFBold"
+}
+
+.profile {
+   position: relative;
+}
+
+.noti-box {
+   position: fixed;
+   top: 0;
+   left: -200%; /* initially hidden on the left */
+   bottom: 0;
+   width: 400px;
+   background-color: white;
+   transition: all 0.5s ease;
+   padding: 20px;
+   box-sizing: border-box;
+   box-shadow: 0px 0px 5px #333;
+   z-index: -1; /* higher than sidebar */
+}
+
+.noti-box form {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 100%;
+}
+
+.noti-box button[type="hidden"] {
+   margin-top: -185%;
+   width: 25%;
+   background-color: #3897f0;
+   border: none;
+   color: #fff;
+   font-size: 16px;
+   cursor: pointer;
+   width: 25%;
+}
+
+.noti_input {
+   background-color: #54545466;
+   border: none;
+   border-radius: 8px;
+   color: #333333;
+   font-size: var(- -system-16-font-size);
+   height: 64px;
+   outline: none;
+   padding: 3px 16px;
+   width: 100%;
+   text-align: center;
+}
+/* Show search box on click */
+.profile:focus+.noti-box, .noti-box:focus-within {
+   left: 240px; /* move to the right */
+}
+
+.profile:focus+.noti-box:focus-within, .noti-box:focus-within+.profile:focus
+   {
+   right: -200%; /* move to the left */
+}
+
+.alarmP {
+	color: black; 
+}
+
+#board_file1Img {
+	display: inline-block;
+    width: 170px;
+    height: 170px;
+    margin-left: -28px;
+    border-radius: 50%;
+}

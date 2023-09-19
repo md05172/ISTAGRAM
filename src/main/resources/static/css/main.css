@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+.photo_file{
+    width:600px; height: 400px;
+    border-radius: 10%;
+}
+
+.photo_box{
+   margin: auto;
+    width: 60%
+}
+
+.form-control{
+   width: 260px;height: 25px;
+}
+
+.container{
+   padding-left: 19px;
+}
+
+.comment-box{
+   padding-left: 38px;
+}
+
+ul{
+   list-style:none;
+}
+
+input[type=file] {
+    display: inline;
+}
+
+.img_file{
+   width: 200px;
+    height: 120px;
+    border-radius: 10%
+}
+
+.deleteBtn_box{
+   margin-left: 560px;
+    padding-bottom: 10px;
+}
+
+.deleteBtn{
+   width: 50px;
+    height: 20px
+}
